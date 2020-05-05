@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var cleanCSS     = require('gulp-clean-css');
+var rename       = require("gulp-rename");
 
 
 gulp.task('hello',function name(done) {
@@ -18,7 +19,7 @@ gulp.task('browser-sync', function() {
 });
 gulp.task('mincss', function() {
 
-    return gulp.src("app/css/*.css")
+    return gulp.src("css/*.css")
     
     .pipe(rename({suffix: ".min"}))
     
