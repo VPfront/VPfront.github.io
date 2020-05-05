@@ -4,7 +4,7 @@ var cleanCSS     = require('gulp-clean-css');
 var rename       = require("gulp-rename");
 
 
-gulp.task('hello',function name(done) {
+gulp.task('hello',function (done) {
     console.log('Привет мир !!!');
     done();
 });
@@ -28,6 +28,4 @@ gulp.task('mincss', function() {
     .pipe(gulp.dest("app/css"));
     
     });
-    gulp.task('min',['mincss']);
-    gulp.task('default', ['serve']);
 
