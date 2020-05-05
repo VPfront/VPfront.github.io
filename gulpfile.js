@@ -26,4 +26,4 @@ gulp.task('mincss', function() {
     .pipe(gulp.dest("app/css"));
     
     });
-    gulp.task('min',['mincss']);
+    gulp.task('min',['mincss',]);
