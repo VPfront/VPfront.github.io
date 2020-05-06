@@ -1,31 +1,46 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
+var {src, dest, watch} = require('gulp');
+
+var browserSync  = require('browser-sync').create();
+
+var sass         = require('gulp-sass');
+
 var cleanCSS     = require('gulp-clean-css');
+
 var rename       = require("gulp-rename");
 
 
-gulp.task('hello',function (done) {
-    console.log('Привет мир !!!');
-    done();
-});
-gulp.task('browser-sync', function() {
+function bs() {
+    serveSass();
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
-    
-    gulp.watch("app/*.html").on('change', browserSync.reload);
-});
-gulp.task('mincss', function() {
 
-    return gulp.src("css/*.css")
+    watch("/*.html").on('change', browserSync.reload);
+    watch("./sass/**/*.sass", serveSass);
+    watch("./js/*.js").on('change', browserSync.reload);
+}
+
+function serveSass() {
+    return src("./sass/*.sass")
+        .pipe(sass())
+        .pipe(dest("./css"))
+        .pipe(browserSync.stream());
+}
+exports.serve = bs;
+
+function mincss() {
+
+    return src("./css/*.css")
     
     .pipe(rename({suffix: ".min"}))
     
     .pipe(cleanCSS())
     
-    .pipe(gulp.dest("app/css"));
+    .pipe(dest("app/css"));
     
-    });
+    }
+    exports.min = mincss;
+
 
