@@ -4,6 +4,8 @@ var browserSync  = require('browser-sync').create();
 
 var sass         = require('gulp-sass');
 
+var autoprefixer = require('gulp-autoprefixer');
+
 var cleanCSS     = require('gulp-clean-css');
 
 var rename       = require("gulp-rename");
@@ -25,6 +27,9 @@ function bs() {
 function serveSass() {
     return src("./sass/*.sass")
         .pipe(sass())
+        .pipe(autoprefixer({
+            cascade: false
+        }))
         .pipe(dest("./css"))
         .pipe(browserSync.stream());
 }
