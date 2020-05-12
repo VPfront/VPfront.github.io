@@ -332,6 +332,7 @@ template {
     padding: 1.3rem 1.9rem;
     font-size: 0.96rem; }
     .button--primary:hover {
+      background-color: #b6935a;
       box-shadow: transition 0.3;
       box-shadow: none; }
   .button--outline {
@@ -402,6 +403,8 @@ body {
 .contacts__phone {
   margin-right: 2.85rem;
   color: #E3B873; }
+  .contacts__phone:hover {
+    color: #E3B873; }
 
 .contacts__button {
   padding: 0.8rem 1.7rem; }
@@ -466,8 +469,9 @@ body {
       border: 2px solid #E3B873;
       border-radius: 50%;
       margin-left: 1.285rem; }
-      .hero__scroll-down::after:hover {
-        cursor: pointer; }
+    .hero__scroll-down:hover {
+      color: #ffffff;
+      cursor: pointer; }
   .hero .instagram {
     display: flex;
     justify-content: center;
