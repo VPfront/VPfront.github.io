@@ -71,29 +71,31 @@
             border-radius: 1px
             cursor: pointer
             margin-right: 0.64rem
-.up 
+.up
     display: inline-block
     background: url(../img/up-arrow.svg) no-repeat center / 1.1rem
-    min-width: 30px
-    min-height: 30px
-    text-align: center
+    max-width: 30px
+    max-height: 30px
     border-radius: 50%
     position: fixed
-    bottom: 30px
-    right: 30px
-    transition: background-color .3s,
-    opacity .5s, visibility .5s
+    bottom: 0
+    right: 0
+    transition: background-color .3s opacity .5s, visibility .5s
     opacity: 0
     visibility: hidden
     z-index: 100
-.up:hover 
-    cursor: pointer
-    background: $primary url(../img/up-arrow.svg) no-repeat center / 1.1rem 
-.up:active 
-    background: $primary url(../img/up-arrow.svg) no-repeat center / 1.1rem 
-.up.show 
-    opacity: 1
-    visibility: visible
-
-
+    border: 2px solid $primary
+    margin: 1rem 1rem
+    &:hover
+        background: rgba($primary , 0.5) url(../img/up-arrow.svg) no-repeat center / 1.1rem 
+        cursor: pointer
+        outline: none
+    &:active
+        background: $primary url(../img/up-arrow.svg) no-repeat center / 1.1rem 
+        outline: none
+    &:focus 
+        outline: none
+    .up.show
+        opacity: 1
+        visibility: visible
     

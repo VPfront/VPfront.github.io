@@ -388,6 +388,10 @@ template {
     font-weight: 500;
     font-size: 1.285rem;
     line-height: 1.785rem; }
+  .input:active {
+    outline: none; }
+  .input:focus {
+    outline: none; }
 
 .policy__checkbox {
   opacity: 0;
@@ -409,6 +413,32 @@ template {
     border-radius: 1px;
     cursor: pointer;
     margin-right: 0.64rem; }
+
+.up {
+  display: inline-block;
+  background: url(../img/up-arrow.svg) no-repeat center/1.1rem;
+  min-width: 30px;
+  min-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100; }
+
+.up:hover {
+  cursor: pointer;
+  background: #E3B873 url(../img/up-arrow.svg) no-repeat center/1.1rem; }
+
+.up:active {
+  background: #E3B873 url(../img/up-arrow.svg) no-repeat center/1.1rem; }
+
+.up.show {
+  opacity: 1;
+  visibility: visible; }
 
 .container {
   max-width: 91.95rem;
@@ -483,7 +513,6 @@ img {
   margin-right: 2.85rem;
   color: #E3B873; }
   .contacts__phone:hover {
-    color: #E3B873;
     color: #b6935a;
     text-decoration: none; }
 
@@ -679,7 +708,10 @@ img {
     background-color: transparent;
     border: 0;
     text-decoration: none;
-    cursor: pointer; }
+    cursor: pointer;
+    outline: none; }
+    .modal__close:hover {
+      outline: none; }
   .modal__title {
     max-width: 27rem;
     font-family: 'Yeseva One', cursive;
