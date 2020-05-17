@@ -1,8 +1,16 @@
+@media screen and ( max-width: 1320px )
+    .section--dark
+        padding-left: 1rem
+        padding-right: 1rem
 @media screen and ( max-width: 1200px )
     html
         font-size: 12px
     .nav
         margin-right: 1rem
+    .swiper-button
+        &-prev,&-next
+            width: 3.5rem
+            height: 1rem
 @media screen and ( max-width: 992px )
     .nav
         display: none
@@ -11,6 +19,12 @@
             display: none
         &__content
             margin-left: 0rem
+    .swiper
+        &-slide
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: start
 @media screen and ( max-width: 830px )
     .row
         flex-direction: column
@@ -49,6 +63,8 @@
     .hero
         &__scroll-down
             display: none
+    .swiper-button-prev, .swiper-button-next
+        opacity: 0
 
     
         
