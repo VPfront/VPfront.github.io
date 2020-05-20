@@ -33,8 +33,47 @@ $(document).ready(function () {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-    
+        
+
     });
+    var mySwiper = new Swiper ('.swiper-container-six', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination-fraction',
+            type: 'fraction',
+        },
+        
+        navigation: {
+            nextEl: '.swiper-button-next-six',
+            prevEl: '.swiper-button-prev-six',
+        },
+        
+
+
+    });
+    var mySwiper = new Swiper ('.swiper-container-six', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next-six',
+            prevEl: '.swiper-button-prev-six',
+        },
+        
+
+    });
+    var swiper = new Swiper('.swiper-container-six', {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, step__number) {
+                return '<span class="' + step__number + '">' + (index + 1) + '</span>';
+            },
+        },
+    });
+
     var next = $('.swiper-button-next');
     var prev = $('.swiper-button-prev');
     var bullets = $('.swiper-pagination');
@@ -42,8 +81,8 @@ $(document).ready(function () {
     next.css('left', prev.width() + 10 + bullets.width() + 10);
     bullets.css('left', prev.width() + 14);
 
-
 });
+    
 jQuery(document).ready(function() {
     var btn = $('.up');
     $(window).scroll(function() {
