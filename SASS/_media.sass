@@ -2,6 +2,7 @@
     .section--dark
         padding-left: 1rem
         padding-right: 1rem
+
 @media screen and ( max-width: 1200px )
     html
         font-size: 12px
@@ -12,8 +13,12 @@
             width: 3.5rem
             height: 1rem
 @media screen and ( max-width: 1024px )
-    .swiper-slide__text
-        flex-basis: 64%
+    .swiper
+        &-container
+    .swiper
+        &-slide
+            &__text
+                flex-basis: 64%
 @media screen and ( max-width: 992px )
     .nav
         display: none
@@ -22,13 +27,24 @@
             display: none
         &__content
             margin-left: 0rem
+        &::before
+            display: none
+    .section-control
+        margin-top: 0
     .swiper
         &-slide
             display: flex
             align-content: space-around
             justify-content: start
-            
+            padding-bottom: 0px
+            margin-bottom: 20px
+            &-next
+                padding-bottom: 0
+
 @media screen and ( max-width: 830px )
+    .section--dark 
+        padding-top: 0rem
+        padding-bottom: 0rem
     .col-30
         margin-right: 0
         margin-left: 1.25rem
@@ -37,7 +53,6 @@
         justify-content: center
         align-items: center
         margin-bottom: 2rem
-        margin-left: 15px
     .types
         &__card
             margin-bottom: 6.542rem

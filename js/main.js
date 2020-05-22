@@ -80,9 +80,23 @@ $(document).ready(function () {
     
     next.css('left', prev.width() + 10 + bullets.width() + 10);
     bullets.css('left', prev.width() + 14);
+    
+    var element_point = $('.card__pricetag').offset().top;
+    var element_animated = false;
+    var animate_delay = 100;
+    $(window).scroll(function() {
+        if (!element_animated && $(window).scrollTop() + window.innerHeight > element_point + animate_delay) {
+        element_animated = true;
+        $('.card__pricetag').animate({opacity:1, width:'90%', padding:'30px'}, 800, function() {
+            $('.card__pricetag').animate({width:'80%', padding:'20px'}, 400);
+        });
+    }
+    });
+    
+    new WOW().init();
 
 });
-    
+
 jQuery(document).ready(function() {
     var btn = $('.up');
     $(window).scroll(function() {
