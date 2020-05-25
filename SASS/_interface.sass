@@ -55,7 +55,6 @@
             .policy__label
                 &::before
                     background: $primary url('../img/modal/check.svg') no-repeat center / 0.8rem
-       
     &__label
         display: flex
         align-items: center
@@ -97,6 +96,10 @@
 .up.show 
     opacity: 1
     visibility: visible
-
-
+label
+    &.invalid
+        color: #df2e1e
+.input
+    &.invalid
+        border-bottom: 1px solid #df2e1e
     

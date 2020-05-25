@@ -444,6 +444,12 @@ template {
   opacity: 1;
   visibility: visible; }
 
+label.invalid {
+  color: #df2e1e; }
+
+.input.invalid {
+  border-bottom: 1px solid #df2e1e; }
+
 .container {
   max-width: 91.95rem;
   margin: auto; }
@@ -934,7 +940,8 @@ img {
     left: 0; }
 
 .footer {
-  margin-top: 200px;
+  position: relative;
+  margin-top: 14.2857rem;
   background: #131313 url("../img/footer/footer-bg.jpg") no-repeat center/cover; }
   .footer__container {
     margin-top: -22.8571rem; }
@@ -942,10 +949,11 @@ img {
     padding-top: 2.2rem;
     padding-left: 12.9rem;
     padding-right: 12.8571rem;
-    margin-top: -50px;
+    margin-top: -3.5714rem;
     margin: auto;
     max-width: 63.0714rem;
-    background-color: black; }
+    background-color: black;
+    margin-bottom: 3.7143rem; }
   .footer__title {
     text-align: center;
     font-family: 'Yeseva One', cursive;
@@ -964,15 +972,28 @@ img {
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    flex-basis: 40%; }
+    flex-basis: 42%;
+    width: 15.7143rem; }
   .footer__policy {
     display: flex;
     margin: auto;
     flex-basis: 100%;
     justify-content: center;
     margin-bottom: 3.1rem; }
-  .footer__policy__label {
-    margin-top: rem; }
+  .footer.footer__label {
+    display: flex;
+    align-items: center;
+    font-family: 'FuturaBook' , cursive;
+    font-size: 0.97rem;
+    line-height: 1.5rem; }
+    .footer.footer__label::before {
+      content: '';
+      min-width: 18px;
+      min-height: 18px;
+      border: 1px solid #E3B873;
+      border-radius: 1px;
+      cursor: pointer;
+      margin-right: 0.64rem; }
   .footer__button {
     font-family: 'FuturaDemiC' cursive;
     font-style: normal;
@@ -986,6 +1007,33 @@ img {
     padding-top: 1rem;
     margin: auto;
     margin-bottom: 2.4571rem; }
+  .footer__adress {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    max-width: 39.2857rem; }
+    .footer__adress-name {
+      font-family: 'Yeseva One', cursive;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.4286rem;
+      line-height: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E3B873;
+      margin-bottom: 1.8571rem; }
+    .footer__adress-image {
+      display: flex;
+      margin: auto; }
+      .footer__adress-image_envelope {
+        margin-right: 1.0714rem; }
+  .footer__lowerMenu {
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #131313;
+    padding: 1.7143rem 0px; }
 
 .input_name {
   margin-right: 5.8571rem; }
@@ -1042,11 +1090,11 @@ img {
   .modal__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
-    margin-bottom: 3.42rem;
+  .modal__input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.77rem;
     padding-bottom: 0.5rem; }
-    .modal__input:last-of-type {
-      margin-bottom: -0.4rem; }
   .modal__button {
     position: absolute;
     max-width: 15.3rem;
@@ -1057,6 +1105,8 @@ img {
   .modal__label {
     display: flex;
     align-items: center; }
+  .modal__policy {
+    margin-top: -3.7857rem; }
 
 @media screen and (max-width: 1320px) {
   .section--dark {
@@ -1113,7 +1163,8 @@ img {
     margin-left: 1.8125rem; }
   .swiper-slide {
     flex-direction: row;
-    margin-top: 2.1875rem; }
+    margin-top: 2.1875rem;
+    margin-bottom: 5.7143rem; }
     .swiper-slide__text {
       flex-basis: 64%; }
     .swiper-slide__header {
@@ -1121,7 +1172,21 @@ img {
     .swiper-slide__meaning {
       font-size: 1rem; }
       .swiper-slide__meaning--building {
-        font-size: 1rem; } }
+        font-size: 1rem; }
+  .control__button {
+    margin: auto; }
+  .control__policy {
+    margin-top: 1.7857rem; }
+  .footer__block {
+    padding: 2.2rem 1rem; }
+  .footer__input-group {
+    display: flex;
+    flex-basis: 100%;
+    padding: 0; }
+  .footer__lowerMenu {
+    display: none; }
+  .footer__adress-image {
+    margin-bottom: 2.1429rem; } }
 
 @media screen and (max-width: 570px) {
   .col-50 {

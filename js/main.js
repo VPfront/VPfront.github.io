@@ -94,6 +94,93 @@ $(document).ready(function () {
     });
     
     new WOW().init();
+    
+    $(".control__form").validate({
+        errorClass: "invalid",
+        rules: {
+          // simple rule, converted to {required:true}
+            userName: {
+                required: true,
+                minlength: 2
+            },
+            userPhone: "required",
+          // compound rule
+            userEmail: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            userName: {
+                required: "Заполните поле Имя",
+                minlength: "Имя не короче двух букв"
+            },
+            userPhone: "Заполните поле Phone",
+            userEmail: {
+                required: "Заполните поле Emali",
+                email: "Введите в формате: name@domain.com"
+            }
+        }
+    });
+    $(".footer__form").validate({
+        errorClass: "invalid",
+        rules: {
+          // simple rule, converted to {required:true}
+            userName: {
+                required: true,
+                minlength: 2
+            },
+            userPhone: "required",
+          // compound rule
+            userComment: {
+                required: true,
+                
+            }
+        },
+        messages: {
+            userName: {
+                required: "Заполните поле Имя",
+                minlength: "Имя не короче двух букв"
+            },
+            userPhone: "Заполните поле Phone",
+            userComment: {
+                required: "Заполните поле Вопрос",
+                
+            }
+        }
+    });
+    $(".modal__form").validate({
+        errorClass: "invalid",
+        rules: {
+          // simple rule, converted to {required:true}
+            userName: {
+                required: true,
+                minlength: 2
+            },
+            userComment:"required",
+            userPhone: "required",
+          // compound rule
+            userEmail: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            userName: {
+                required: "Заполните поле Имя",
+                minlength: "Имя не короче двух букв"
+            },
+            userComment:"Заполните поле Phone",
+            userPhone: "Заполните поле Phone",
+            userEmail: {
+                required: "Заполните поле Emali",
+                email: "Введите в формате: name@domain.com"
+            }
+        }
+    });
+    
+    $('[type=tel]').mask('+47(000) 00-000',{placeholder:"+47(___) __-___"});
+
 
 });
 

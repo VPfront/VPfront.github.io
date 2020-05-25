@@ -1,5 +1,6 @@
 .footer
-    margin-top: 200px
+    position: relative
+    margin-top: 14.2857rem
     background: $dark url('../img/footer/footer-bg.jpg') no-repeat center / cover
     &__container
         margin-top: -22.8571rem
@@ -7,10 +8,11 @@
         padding-top: 2.2rem
         padding-left: 12.9rem
         padding-right: 12.8571rem
-        margin-top: -50px
+        margin-top: -3.5714rem
         margin: auto
         max-width: 63.0714rem
         background-color: black
+        margin-bottom: 3.7143rem
     &__title
         text-align: center
         font-family: 'Yeseva One', cursive
@@ -29,15 +31,28 @@
         justify-content: center
         flex-direction: column
         flex-wrap: wrap
-        flex-basis: 40%
+        flex-basis: 42%
+        width: 15.7143rem
     &__policy
         display: flex
         margin: auto
         flex-basis: 100%
         justify-content: center
         margin-bottom: 3.1rem
-    &__policy__label
-        margin-top: rem
+    &.footer__label
+        display: flex
+        align-items: center
+        font-family: 'FuturaBook' , cursive
+        font-size: 0.97rem
+        line-height: 1.5rem
+        &::before
+            content: ''
+            min-width: 18px
+            min-height: 18px
+            border: 1px solid $primary
+            border-radius: 1px
+            cursor: pointer
+            margin-right: 0.64rem
     &__button
         font-family: 'FuturaDemiC' cursive
         font-style: normal
@@ -51,7 +66,33 @@
         padding-top: 1rem
         margin: auto
         margin-bottom: 2.4571rem
-
+    &__adress
+        display: flex
+        margin: auto
+        flex-direction: column
+        max-width: 39.2857rem
+        &-name
+            font-family: 'Yeseva One', cursive
+            font-style: normal
+            font-weight: normal
+            font-size: 1.4286rem
+            line-height: 2rem
+            text-align: center
+            text-transform: uppercase
+            color: $primary
+            margin-bottom: 1.8571rem
+        &-image
+            display: flex
+            margin: auto
+            &_envelope
+                margin-right: 1.0714rem
+    &__lowerMenu
+        bottom: 0
+        position: absolute
+        left: 0
+        width: 100%
+        background-color: $dark
+        padding: 1.7143rem 0px
 .input_name
     margin-right: 5.8571rem
 .input_question
