@@ -64,9 +64,7 @@ $(document).ready(function () {
 
     });
     var sixSteps = new Swiper ('.swiper-sixSteps', {
-        mode:'horizontal',
         loop: true,
-        slideToClickedSlide:true,
         pagination: {
             el: '.pagination-sixSteps',
             type: 'bullets',
@@ -82,11 +80,16 @@ $(document).ready(function () {
         
 
     });
+    var sixSteps = new Swiper ('.swiper-sixSteps', {
+        mode:'horizontal',
+        loop: false,
+        slideToClickedSlide:true,
+    });
     $('#btn1').click(function(e) {
         e.preventDefault();
         $(".swiper-slide .swiper-slide-active").removeClass('swiper-slide-active');
         $(this).addClass('active');
-        sixSteps.slideToloop(0, 1000, false);
+        sixSteps.slideTo(0, 1000, false);
     
     });
     
