@@ -1,16 +1,26 @@
-/* document.addEventListener("DOMContentLoaded", function(event) {
+/* 
+document.addEventListener("DOMContentLoaded", function(event) {
     const modal = document.querySelector('.modal');
     const modalBtn =  document.querySelectorAll('[data-toggle=modal]');
     const closeBtn = document.querySelector('.modal__close');
+    const closeAre = document.querySelector('.modal__shadow');
     const switchModal = () => {
         modal.classList.toggle('modal--visible');
     }
     modalBtn.forEach(еlement => {
         еlement.addEventListener('click', switchModal);
     });
-    closeBtn.addEventListener('click', switchModal);
-}); */
 
+    closeBtn.addEventListener('click', switchModal);
+    closeAre.addEventListener('click', switchModal);
+
+    document.addEventListener('keydown', function (e) {
+        if(e.keyCode === 27) {
+            modal.classList.remove('modal--visible');
+        }
+    });
+});
+ */
 $(document).ready(function () {
     var modal = $('.modal'),
         modalBtn = $('[data-toggle=modal]'),
@@ -22,12 +32,14 @@ $(document).ready(function () {
     closeBtn.on('click', function () {
         modal.toggleClass('modal--visible');
     });
+    
       //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
+    var projects = new Swiper ('.swiper-projects', {
         loop: true,
         pagination: {
-            el: '.swiper-pagination',
+            el: '.pagination-projects',
             type: 'bullets',
+            
         },
         navigation: {
             nextEl: '.swiper-button-next',
@@ -36,7 +48,7 @@ $(document).ready(function () {
         
 
     });
-    var mySwiper = new Swiper ('.swiper-container-six', {
+    var sixStepsfraction = new Swiper ('.swiper-sixSteps', {
         loop: true,
         pagination: {
             el: '.swiper-pagination-fraction',
@@ -44,35 +56,44 @@ $(document).ready(function () {
         },
         
         navigation: {
-            nextEl: '.swiper-button-next-six',
-            prevEl: '.swiper-button-prev-six',
+            nextEl: '.swiper-button-nextSteps',
+            prevEl: '.swiper-button-prevSteps',
         },
         
 
 
     });
-    var mySwiper = new Swiper ('.swiper-container-six', {
+    var sixSteps = new Swiper ('.swiper-sixSteps', {
+        mode:'horizontal',
         loop: true,
+        slideToClickedSlide:true,
         pagination: {
-            el: '.swiper-pagination',
+            el: '.pagination-sixSteps',
             type: 'bullets',
+            
         },
+        
         navigation: {
-            nextEl: '.swiper-button-next-six',
-            prevEl: '.swiper-button-prev-six',
+            nextEl: '.swiper-button-nextSteps',
+            prevEl: '.swiper-button-prevSteps',
+            
         },
+        
         
 
     });
-    var swiper = new Swiper('.swiper-container-six', {
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            renderBullet: function (index, step__number) {
-                return '<span class="' + step__number + '">' + (index + 1) + '</span>';
-            },
-        },
+    $('#btn1').click(function(e) {
+        e.preventDefault();
+        $(".swiper-slide .swiper-slide-active").removeClass('swiper-slide-active');
+        $(this).addClass('active');
+        sixSteps.slideToloop(0, 1000, false);
+    
     });
+    
+    
+        
+    
+    
 
     var next = $('.swiper-button-next');
     var prev = $('.swiper-button-prev');
@@ -97,6 +118,7 @@ $(document).ready(function () {
     
     $(".control__form").validate({
         errorClass: "invalid",
+        errorElement: "div",
         rules: {
           // simple rule, converted to {required:true}
             userName: {
@@ -180,6 +202,68 @@ $(document).ready(function () {
     });
     
     $('[type=tel]').mask('+47(000) 00-000',{placeholder:"+47(___) __-___"});
+    
+
+
+    // Функция ymaps.ready() будет вызвана, когда
+    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+                center: [55.751574, 37.573856],
+                zoom: 9
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+    
+            // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
+    
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'Собственный значок метки',
+                balloonContent: 'Это красивая метка'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: './img/map/map_icon64.png',
+                // Размеры метки.
+                iconImageSize: [32, 32],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-5, -38]
+            }),
+    
+            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+                hintContent: 'Собственный значок метки с контентом',
+                balloonContent: 'А эта — новогодняя',
+                iconContent: '12'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#imageWithContent',
+                // Своё изображение иконки метки.
+                iconImageHref: 'images/ball.png',
+                // Размеры метки.
+                iconImageSize: [48, 48],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-24, -24],
+                // Смещение слоя с содержимым относительно слоя с картинкой.
+                iconContentOffset: [15, 15],
+                // Макет содержимого.
+                iconContentLayout: MyIconContentLayout
+            });
+    
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
+    });
+    
+
+    
 
 
 });

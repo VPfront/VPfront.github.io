@@ -1,1 +1,39 @@
-
+.swiper
+    &-button
+        &-prevSteps
+            padding-left: 20xp
+            bottom: 0.35rem
+            top: auto
+            background-size: 3rem
+            width: 3rem
+            height: 1rem
+            background: url('../img/projects/prev.svg')
+            &::after
+                display: none
+        &-nextSteps
+            bottom: 0.25rem
+            top: auto
+            background-size: 3rem
+            width: 3rem
+            height: 1rem
+            background: url('../img/projects/next.svg')
+            &::after
+                display: none
+    &-slide
+        &.slide_4
+            color: #a21616
+            &--visible
+                opacity: 1
+                visibility: visible
+.steps
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    cursor: pointer
+    &.step3
+        text-decoration: none
+        background: transparen
+        cursor: pointer
+.swiper-container-horizontal > .swiper-pagination-bullets
+    width: auto
+    bottom: 0
