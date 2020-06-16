@@ -2,6 +2,11 @@
     .section--dark
         padding-left: 1rem
         padding-right: 1rem
+    .sixSteps
+        display: none
+    .ourTeam
+        background: $dark
+        margin-top: 0px
 @media screen and ( max-width: 1200px )
     html
         font-size: 12px
@@ -18,6 +23,11 @@
         &-slide
             &__text
                 flex-basis: 64%
+    .ourTeam__row
+        display: flex
+        flex-direction: column
+        margin: auto
+        align-items: center
 @media screen and ( max-width: 992px )
     .nav
         display: none
@@ -25,9 +35,7 @@
         &__instagram
             display: none
         &__content
-            margin-left: 0rem
-        &::before
-            display: none
+            
     .section-control
         margin-top: 0
     .swiper
@@ -40,9 +48,15 @@
             &-next
                 padding-bottom: 0
 @media screen and ( max-width: 830px )
+    .hero
+        &__content
+            margin: auto
+            &-text
+                margin: auto
+                
+                margin-bottom: 30px
     .section--dark 
-        padding-top: 0rem
-        padding-bottom: 0rem
+        padding: 0 15px
     .col-30
         margin-right: 0
         margin-left: 1.25rem
@@ -92,41 +106,82 @@
             order: 1
         &__adress
             order: 2
-
-
 @media screen and ( max-width: 570px )
+    .section
+        padding: 100px 10px
     .col-50
         width: 100% 
+    .header
+        padding: 15px 0
+    .menu
+        &__logo
+            font-size: 10.5px
+            margin-left: 6px
     .contacts
         &__phone
-            margin-right: 0
+            font-size: 10.5px
+            margin-right: 1px
             color: $light
+            text-decoration: none
         &__button
             display: none
-    .title
-        font-size: 1.64rem
+    .hero__title
+        margin-top: 14px
+        font-size: 19.8px
+        line-height: 132.83% 
     .hero
+        &::after
+            display: none
         &__scroll-down
             display: none
         &__content
+            margin: 0px
             max-width: 22.85rem
-        &__text
-            font: 1.29rem
-            margin-bottom: 2.28rem
+            &-title
+                margin-top: 46px
+                font-size: 19.8px
+                line-height: 132.83%
+                margin-bottom: 9px
+            &-text
+                font-size: 1.29rem
+                margin-bottom: 29px
+                line-height: 135.84%
         &__button
             display: block
-            min-width: 22.86rem
+            min-width: 290px
             margin-bottom: 1.85rem
-    .card
-        &__text
-            margin-left: 0
-            left: 0
+            &-primary
+                margin-bottom: 21px
+            &-outline
+                margin-bottom: 50px
+    .section-title
+        &__heading
+            font-size: 19px
+            line-height: 138.6%
+            letter-spacing: -0.07em
+            margin-top: 29px          
+    .projects
+        &__heading
+            font-size: 19px
+            line-height: 138.6%
+            letter-spacing: -0.07em
+            margin-top: 30px
+        &__word
+            &::after
+                display: none
+        &__textProjects
+            font-size: 12px
+            line-height: 160.48%
     .swiper
         &-button-prev, &-button-next
             margin-left: -0.25rem
         &-pagination
             margin-left: -0.25rem
         &-slide
+            flex-direction: row
+            margin-top: 0.1rem
+            margin-bottom: 3.88rem
+            width: 267px
             &__text
                 display: block
                 flex-wrap: wrap
@@ -137,21 +192,157 @@
                 font-size: 1rem
                 &--building
                     font-size: 1rem
+            &__img
+                margin-top: 23px
+                margin-bottom: 152px
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet
+        margin-left: 7px
+        width: 8px
+        height: 8px
+    .control-section
+        &-title__heading
+            font-size: 21px
+            line-height: 138.6%
+            letter-spacing: -0.07em
+            margin-top: 22px
+        &__video
+            min-height: 16rem
+            &__play
+                width: 55px
+                height: 55px
+        &__text
+            font-size: 12px
+            line-height: 169.8%
+            margin-bottom: 30px
+            &::before
+                margin-bottom: 1rem
+                margin-top: -37px
+        &__input-group
+            margin-bottom: 50px
+        &__input-userPhone
+            margin-bottom: 42px
+        &__btn
+            max-width: 300px
+            padding: 20px 111px
+            order: 2
+            margin-bottom: -41px
+        &__policy
+            margin-top: -69px
+            margin-bottom: 53px
+            order: 1
+            justify-content: left
+            margin-left: -17px
+    .col-30
+        width: 100%
+    .types
+        &__heading
+            font-size: 21px
+            line-height: 138.6%
+            letter-spacing: -0.07em
+            margin-bottom: 10px
+            margin-top: 0
+    .card
+        margin-left: 0
+        &__image
+            margin-top: 7px
+            margin-bottom: -13px
+        &__title
+            font-size: 12.9px
+            line-height: 138.6%
+        &__list
+            margin-bottom: 14px
+        &__item
+            font-size: 10px
+            line-height: 192%
+        &__text
+            margin-left: 0
+            left: 0
+            max-width: 230px
+            padding-top: 17px
+            padding-bottom: 2px
+    .card__btn
+        width: 163px
+        height: 34px
+        font-size: 12.8px
+        padding: 8px 19px
+    .desing
+        background: $dark
+        margin-bottom: -88px
+        &__section-title
+            color: $light
+            &-heading
+            &-text
+                font-style: normal
+                max-width: 259px
+                font-weight: normal
+                font-size: 13px
+                line-height: 135.84%
+                margin-top: -1px
+                margin-bottom: 24px
+        &-card__btn
+            width: 163px
+            height: 34px
+            font-size: 12.8px
+            padding: 8px 19px
+    .card__item-last
+        display: none
+    .ourTeam
+        &__section-title
+            &-heading
+                font-size: 21px
+                line-height: 138.6%
+                letter-spacing: -0.07em
+            &-text
+                font-style: normal
+                max-width: 290px
+                font-weight: normal
+                font-size: 13px
+                line-height: 135.84%
+        &__description
+            display: none
+    .ourCustomers
+        display: none
+    .up
+        display: none
+    .footer
+        background: $dark
+        display: block
+        padding: 0
+        &__block
+            background: $dark
+        &__button
+            max-width: 300px
+            padding: 20px 111px
+            margin-bottom: -41px
+            font-weight: 500
+            font-size: 15px
+            line-height: 26px
+            text-align: center
+            text-transform: uppercase
+        &__adress-name
+            font-size: 19px
+            line-height: 138.6%
+            text-align: center
+            text-transform: uppercase
+        &__adress-image
+            margin-bottom: 40px
 @media screen and ( max-height: 544px )
     .hero
         &__scroll-down
             display: none
 @media screen and ( max-width: 320px )
     .swiper
-        &-button-prev, &-button-next
-            margin-left: -0.25rem
+        &-button-prev, 
+            margin-left: -8px
+        &-button-next
+            margin-left: 3px
         &-pagination
             margin-left: -0.25rem
         &-slide
             &__text
                 display: block
                 flex-wrap: wrap
-                flex-basis: 75%
+                flex-basis: 82%
             &__header
                 font-size: 1rem
             &__meaning

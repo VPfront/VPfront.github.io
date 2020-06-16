@@ -53,6 +53,11 @@ $(document).ready(function () {
         pagination: {
             el: '.swiper-pagination-fraction',
             type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>' +
+                    ' / ' +
+                    '<span class="' + totalClass + '"></span>';
+        },
         },
         
         navigation: {
@@ -63,47 +68,152 @@ $(document).ready(function () {
 
 
     });
-    var sixSteps = new Swiper ('.swiper-sixSteps', {
+    /* var sixSteps = new Swiper ('.swiper-sixSteps', {
         loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        
+        navigation: {
+            nextEl: '.swiper-button-nextSteps',
+            prevEl: '.swiper-button-prevSteps',
+            
+        },
+        
+    }); */
+    
+/*     var Swiper1 = new Swiper('#swiper-fraction');
+    var Swiper2 = new Swiper('#swiper-sixSteps-img',{
+    controller: {
+        control: Swiper1,
+    },
+
+    });
+
+    Swiper1.controller.control = Swiper2;
+    Swiper2.controller.control = Swiper1;
+
+    var Swiper3 = new Swiper('#sixStepsBtn',{
+    controller:{
+        control: [Swiper1, Swiper2],
+    },
+
+    }); */
+    
+    var sixStepsBtn = new Swiper ('.sixSteps__swiper', {
+        loop: true,
+        mode:'horizontal',
+        slideToClickedSlide:true,
+        pagination: {
+            el: '.swiper-pagination',   
+            totalClass : '.my-pagination-bull',
+            clickable : false,
+            bulletElement : 'li',
+            
+        },
+        navigation: {
+            nextEl: '.swiper-button-nextSteps',
+            prevEl: '.swiper-button-prevSteps',
+            
+        },
+            
+    });
+    /* var sixStepsBtn1 = new Swiper ('.swiper-sixSteps', {
+        loop: false,
+        mode:'horizontal',
+        slideToClickedSlide:true,
         pagination: {
             el: '.pagination-sixSteps',
             type: 'bullets',
             
         },
-        
-        navigation: {
-            nextEl: '.swiper-button-nextSteps',
-            prevEl: '.swiper-button-prevSteps',
             
-        },
-        
-        
-
-    });
-    var sixSteps = new Swiper ('.swiper-sixSteps', {
-        mode:'horizontal',
-        loop: false,
-        slideToClickedSlide:true,
-    });
-    $('#btn1').click(function(e) {
+    }); */
+    /* $('.page1').click(function(e) {
         e.preventDefault();
-        $(".swiper-slide .swiper-slide-active").removeClass('swiper-slide-active');
+        $('.swiper-slide .active').removeClass('active');
         $(this).addClass('active');
-        sixSteps.slideTo(0, 1000, false);
-    
+        sixStepsBtn1[0].slideTo(0,1000,false );
+    }); */
+
+    $('.page1').click(function(e) {
+        e.preventDefault();
+        $('.swiper-slide .active').removeClass('active');
+        $(this).addClass('active');
+        sixStepsBtn[0].slideTo(1,1000,false );
     });
     
-    
+    $('.page2').click(function(e) {
+        e.preventDefault();
+        $('.swiper-wrapper .active').removeClass('active');
+        $(this).addClass('active');
+        sixStepsBtn[0].slideTo(2,1000,false );
         
-    
-    
+    });
+    $('.page3').click(function(e) {
+        e.preventDefault();
+        $('.swiper-wrapper .swiper-slide-active').removeClass('swiper-slide-active');
+        $(this).addClass('swiper-slide-active');
+        sixStepsBtn[0].slideTo(3,1000,false );
+    });
+    $('.page4').click(function(e) {
+        e.preventDefault();
+        $('.swiper-slide .swiper-slide-active').removeClass('swiper-slide-active');
+        $(this).addClass('swiper-slide-active');
+        sixStepsBtn[0].slideTo(4,1000,false );
+        
+    });
+    $('.page5').click(function(e) {
+        e.preventDefault();
+        $('.swiper-slide .swiper-slide-active').removeClass('swiper-slide-active');
+        $(this).addClass('swiper-slide-active');
+        sixStepsBtn[0].slideTo(5,1000,false );
+    });
+    $('.page6').click(function(e) {
+        e.preventDefault();
+        $('.swiper-slide .swiper-slide-active').removeClass('swiper-slide-active');
+        $(this).addClass('swiper-slide-active');
+        sixStepsBtn[0].slideTo(0,1000,false );
+    });
 
+/*     var sixStepsBul = new Swiper ('.swiper-sixSteps', {
+        loop: false,
+        mode:'horizontal',
+        slideToClickedSlide:true,
+        pagination: {
+            el: '.pagination.bullets[1]',
+        },   
+        
+    });
+
+    $('.step').click(function(e) {
+        e.preventDefault();
+        $('.swiper-pagination-bullets .active').removeClass('active');
+        $(this).addClass('active');
+        sixStepsBul[0].slideTo( $('.swiper-pagination-bullet-active ').index(),1000,false );
+    });
+ */
+
+    /* $('#btn     ').click(function(e) {
+        e.preventDefault();
+        $(".menu .active").removeClass('active');
+        $(this).addClass('active');
+        mySwiper.slideTo( $('.pag2').index(),1000,false );
+    }); */
+    
     var next = $('.swiper-button-next');
     var prev = $('.swiper-button-prev');
     var bullets = $('.swiper-pagination');
     
     next.css('left', prev.width() + 10 + bullets.width() + 10);
     bullets.css('left', prev.width() + 14);
+
+    var next_sixSteps = $('.swiper-button-nextSteps');
+    var prev_sixSteps = $('.swiper-button-prevSteps');
+    var bullets_sixSteps = $('.pagination-sixSteps');
+    
+    next_sixSteps.css('left', prev_sixSteps.width() + 20 + bullets_sixSteps.width() + 20);
+    bullets_sixSteps.css('left', prev_sixSteps.width() + 20);
     
     var element_point = $('.card__pricetag').offset().top;
     var element_animated = false;
@@ -208,8 +318,6 @@ $(document).ready(function () {
     
 
 
-    // Функция ymaps.ready() будет вызвана, когда
-    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
     ymaps.ready(function () {
         var myMap = new ymaps.Map('map', {
                 center: [55.751574, 37.573856],
@@ -231,38 +339,17 @@ $(document).ready(function () {
                 // Необходимо указать данный тип макета.
                 iconLayout: 'default#image',
                 // Своё изображение иконки метки.
-                iconImageHref: './img/map/map_icon64.png',
+                iconImageHref: 'img/map/map_icon64.png',
                 // Размеры метки.
                 iconImageSize: [32, 32],
                 // Смещение левого верхнего угла иконки относительно
                 // её "ножки" (точки привязки).
                 iconImageOffset: [-5, -38]
-            }),
-    
-            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-                hintContent: 'Собственный значок метки с контентом',
-                balloonContent: 'А эта — новогодняя',
-                iconContent: '12'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#imageWithContent',
-                // Своё изображение иконки метки.
-                iconImageHref: 'images/ball.png',
-                // Размеры метки.
-                iconImageSize: [48, 48],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-24, -24],
-                // Смещение слоя с содержимым относительно слоя с картинкой.
-                iconContentOffset: [15, 15],
-                // Макет содержимого.
-                iconContentLayout: MyIconContentLayout
             });
     
         myMap.geoObjects
-            .add(myPlacemark)
-            .add(myPlacemarkWithContent);
+            .add(myPlacemark);
+            
     });
     
 

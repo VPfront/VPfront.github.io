@@ -1,6 +1,137 @@
+.sixSteps
+    padding-top: 433px
+    margin-top: -523px
+    padding-bottom: 378px
+    &-title__left-sixSteps
+        margin-right: 124px
+        margin-left: 0px
+        margin-bottom: 84px
+    &-title__heading-sixSteps--secondary
+        font-family: 'FuturaDemiC', cursive
+        font-style: normal
+        font-weight: 500
+        font-size: 15px
+        line-height: 21px
+        text-transform: uppercase
+        margin-bottom: 15px
+    &-title__heading-sixSteps--primary
+        letter-spacing: 0em
+    &-title__word--sixSteps        
+        &::after
+            content: ''
+            margin-left: 87px    
+.sixSteps__swiper
+    &-pagination-fraction
+        font-family: 'Yeseva One', cursive
+        font-style: normal
+        font-weight: normal
+        font-size: 18px
+        line-height: 25px
+        text-transform: uppercase
+        letter-spacing: -2.5px
+    &-slide__text
+        max-width: 330px
+        flex-basis: auto
+    &-slide__header
+        font-family: 'Yeseva One', cursive
+        font-style: normal
+        font-weight: normal
+        font-size: 15px
+        line-height: 23px
+        text-transform: uppercase
+        max-width: 250px
+        margin-bottom: 10px
+        &-text
+            font-family: 'FuturaBookC', cursive
+            font-style: normal
+            font-weight: normal
+            font-size: 15px
+            line-height: 25px
+    &__btnMenu
+        max-width: 1000px
+        margin-top: 91px
+        margin-left: -156px
+        margin-bottom: 8px
+    &__steps
+        display: flex
+        flex-wrap: wrap
+        &-step
+            max-width: 200px
+            height: 107px
+            display: flex
+            flex-wrap: wrap
+            flex-direction: column
+            margin-bottom: 0px
+            margin-right: 130px
+            opacity: 0.2
+            &:hover
+                content: ''
+                opacity: 1
+            &__number
+                font-family: 'Yeseva One', cursive
+                font-style: normal
+                font-weight: normal
+                font-size: 15px
+                line-height: 21px
+                text-transform: uppercase
+                border-bottom: 1.5px solid $primary
+                width: 17px
+                height: 21px
+                margin-bottom: 8px
+            &__text
+                font-family: 'FuturaDemiC', cursive
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 18px
+                margin-bottom: 14px
+                padding-left: 0px
+                max-width: 140px
+            &--step3
+                margin-right: -200px
+                margin-left: 5px
+            &--step6
+                margin-right: -200px
+                margin-left: 5px
+    &-slide_img
+        max-width: 765px
+        min-height: 378px
+        background: url('..//img/sixSteps/image.jpg') no-repeat center
+        background-size: cover
+
+        
+    
+    &__steps-container__steps
+        max-width: 1002px
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        margin-right: -100px
+        margin-top: 89px
+    &__steps-container__step
+        width: 113px
+        position: relative
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 18px
+        margin-right: 108px
+        &::before
+            content: ''
+            width: 1000px
+            height: 500px
+            background: rgba($dark,0.8)
+            display: block
+            position: absolute
+            opacity: 0
+        &:hover
+            content: ''
+            z-index: 30
+        
+
 .swiper
     &-button
         &-prevSteps
+            display: inline-block
             padding-left: 20xp
             bottom: 0.35rem
             top: auto
@@ -8,9 +139,11 @@
             width: 3rem
             height: 1rem
             background: url('../img/projects/prev.svg')
+            margin-left: -10px
             &::after
                 display: none
         &-nextSteps
+            display: inline-block
             bottom: 0.25rem
             top: auto
             background-size: 3rem
@@ -19,21 +152,22 @@
             background: url('../img/projects/next.svg')
             &::after
                 display: none
-    &-slide
-        &.slide_4
-            color: #a21616
-            &--visible
-                opacity: 1
-                visibility: visible
-.steps
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-around
-    cursor: pointer
-    &.step3
-        text-decoration: none
-        background: transparen
-        cursor: pointer
+    
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet 
+    margin: 0 8.5px
+    width: 10px
+    height: 10px
 .swiper-container-horizontal > .swiper-pagination-bullets
     width: auto
     bottom: 0
+    
+.my-pagination-bull
+.swiper-container.sixSteps__swiper.swiper-container-initialized.swiper-container-horizontal
+    
+.swiper-container.swiper-sixSteps.swiper-container-initialized.swiper-container-horizontal
+    max-width: 765px
+    min-height: 378px
+    margin-left: -156px
+.sixSteps_col-50
+    max-width: 35%
+    margin-right: 188px
